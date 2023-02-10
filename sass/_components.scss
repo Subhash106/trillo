@@ -11,6 +11,14 @@
   letter-spacing: 1px;
 }
 
+.paragraph {
+  font-size: 1.6rem;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+
 .logo {
   height: 3.25rem;
 }
@@ -292,5 +300,49 @@
   100% {
     transform: scale(1);
     box-shadow: none;
+  }
+}
+
+.description {
+  background-color: #fff;
+  border-radius: 3px;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-grey-light-3);
+    border-bottom: 1px solid var(--color-grey-light-3);
+
+    &--item {
+      display: flex;
+      align-items: center;
+      flex: 0 0 50%;
+    }
+
+    &--icon {
+      width: 1.2rem;
+      height: 1.2rem;
+      fill: var(--color-primary);
+    }
+
+    &--text {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.recommendation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+
+  &__image {
+    width: 4.5rem;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-left: -12px;
   }
 }

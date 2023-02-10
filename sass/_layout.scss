@@ -25,11 +25,23 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 0 0 30rem;
+  flex: 0 0 20rem;
   background-color: var(--color-grey-dark-1);
 }
 
 .hotel-view {
   flex: 1 1 auto;
   min-height: 50rem;
+}
+
+.details {
+  padding: 2rem;
+  display: flex;
+}
+
+.description {
+  flex: 0 0 60%;
+  margin-right: 2rem;
+  padding: 2rem;
+  box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.1);
 }

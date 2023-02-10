@@ -52,6 +52,9 @@ body {
 .ml-small {
   margin-left: 2rem; }
 
+.mb-0 {
+  margin-bottom: 0 !important; }
+
 /**
 *******************************************************
 ***********************TYPOGRAPHY**********************
@@ -62,6 +65,11 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 2rem; }
 
 .logo {
   height: 3.25rem; }
@@ -273,6 +281,38 @@ body {
     transform: scale(1);
     box-shadow: none; } }
 
+.description {
+  background-color: #fff;
+  border-radius: 3px; }
+  .description__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-grey-light-3);
+    border-bottom: 1px solid var(--color-grey-light-3); }
+    .description__list--item {
+      display: flex;
+      align-items: center;
+      flex: 0 0 50%; }
+    .description__list--icon {
+      width: 1.2rem;
+      height: 1.2rem;
+      fill: var(--color-primary); }
+    .description__list--text {
+      font-size: 1.6rem; }
+
+.recommendation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem; }
+  .recommendation__image {
+    width: 4.5rem;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-left: -12px; }
+
 .container {
   max-width: 120rem;
   margin: 8rem auto;
@@ -296,9 +336,19 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 0 0 30rem;
+  flex: 0 0 20rem;
   background-color: var(--color-grey-dark-1); }
 
 .hotel-view {
   flex: 1 1 auto;
   min-height: 50rem; }
+
+.details {
+  padding: 2rem;
+  display: flex; }
+
+.description {
+  flex: 0 0 60%;
+  margin-right: 2rem;
+  padding: 2rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1); }
