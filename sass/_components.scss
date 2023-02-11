@@ -249,6 +249,12 @@
   }
 }
 
+/**
+*******************************************************
+**************************RATINGS**********************
+*******************************************************
+*/
+
 .ratings {
   text-align: center;
   text-transform: uppercase;
@@ -266,6 +272,12 @@
   }
 }
 
+/**
+*******************************************************
+**************************BTN INLINE**********************
+*******************************************************
+*/
+
 .btn-inline {
   border: none;
   background-color: transparent;
@@ -274,10 +286,20 @@
   padding-bottom: 2px;
   border-bottom: 1px solid currentColor;
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.2s ease-in-out;
+
+  & span {
+    margin-left: 3px;
+    transform: margin-left 0.2s;
+  }
 
   &:hover {
     color: var(--color-grey-dark-1);
+
+    span {
+      margin-left: 8px;
+    }
   }
 
   &:focus {
@@ -303,6 +325,11 @@
   }
 }
 
+/**
+*******************************************************
+**************************HOTEL DESCRIPTION**********************
+*******************************************************
+*/
 .description {
   background-color: #fff;
   border-radius: 3px;
@@ -333,6 +360,11 @@
   }
 }
 
+/**
+*******************************************************
+**************************RECOMMENDATION**********************
+*******************************************************
+*/
 .recommendation {
   display: flex;
   align-items: center;
@@ -344,5 +376,67 @@
     border-radius: 50%;
     border: 2px solid #fff;
     margin-left: -12px;
+  }
+}
+
+/**
+*******************************************************
+**************************REVIEW**********************
+*******************************************************
+*/
+.review {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 2rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.15);
+
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 10;
+
+    &::before {
+      z-index: 1;
+      content: "\201C";
+      position: absolute;
+      top: 25px;
+      left: -22px;
+      font-size: 20rem;
+      line-height: 0.1;
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &--photo {
+      width: 4.5rem;
+      border-radius: 50%;
+    }
+
+    &--name {
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    &--date {
+      font-size: 1.2rem;
+    }
+
+    &--rating {
+      margin-left: auto;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
   }
 }

@@ -55,6 +55,12 @@ body {
 .mb-0 {
   margin-bottom: 0 !important; }
 
+.mb-small {
+  margin-bottom: 2rem; }
+
+.text-center {
+  text-align: center; }
+
 /**
 *******************************************************
 ***********************TYPOGRAPHY**********************
@@ -243,6 +249,11 @@ body {
     height: 2.25rem;
     fill: var(--color-primary); }
 
+/**
+*******************************************************
+**************************RATINGS**********************
+*******************************************************
+*/
 .ratings {
   text-align: center;
   text-transform: uppercase;
@@ -255,6 +266,11 @@ body {
   .ratings__count {
     font-size: 1.6rem; }
 
+/**
+*******************************************************
+**************************BTN INLINE**********************
+*******************************************************
+*/
 .btn-inline {
   border: none;
   background-color: transparent;
@@ -263,9 +279,15 @@ body {
   padding-bottom: 2px;
   border-bottom: 1px solid currentColor;
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.2s ease-in-out; }
+  .btn-inline span {
+    margin-left: 3px;
+    transform: margin-left 0.2s; }
   .btn-inline:hover {
     color: var(--color-grey-dark-1); }
+    .btn-inline:hover span {
+      margin-left: 8px; }
   .btn-inline:focus {
     outline: none;
     animation: pulsate 0.2s infinite; }
@@ -281,6 +303,11 @@ body {
     transform: scale(1);
     box-shadow: none; } }
 
+/**
+*******************************************************
+**************************HOTEL DESCRIPTION**********************
+*******************************************************
+*/
 .description {
   background-color: #fff;
   border-radius: 3px; }
@@ -302,6 +329,11 @@ body {
     .description__list--text {
       font-size: 1.6rem; }
 
+/**
+*******************************************************
+**************************RECOMMENDATION**********************
+*******************************************************
+*/
 .recommendation {
   display: flex;
   align-items: center;
@@ -312,6 +344,51 @@ body {
     border-radius: 50%;
     border: 2px solid #fff;
     margin-left: -12px; }
+
+/**
+*******************************************************
+**************************REVIEW**********************
+*******************************************************
+*/
+.review {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 2rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15); }
+  .review:not(:last-child) {
+    margin-bottom: 4rem; }
+  .review__text {
+    position: relative;
+    z-index: 10; }
+    .review__text::before {
+      z-index: 1;
+      content: "\201C";
+      position: absolute;
+      top: 25px;
+      left: -22px;
+      font-size: 20rem;
+      line-height: 0.1; }
+  .review__user {
+    display: flex;
+    align-items: center;
+    gap: 1rem; }
+    .review__user--photo {
+      width: 4.5rem;
+      border-radius: 50%; }
+    .review__user--name {
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-transform: uppercase; }
+    .review__user--date {
+      font-size: 1.2rem; }
+    .review__user--rating {
+      margin-left: auto;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--color-primary); }
 
 .container {
   max-width: 120rem;
