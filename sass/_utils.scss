@@ -1,5 +1,9 @@
 .ml-small {
   margin-left: 2rem;
+
+  @media screen and (max-width: $bp-smallest) {
+    margin-left: 0.5rem;
+  }
 }
 
 .mb-0 {

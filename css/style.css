@@ -40,6 +40,9 @@ Grey dark 3: #999
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 70em) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -51,6 +54,9 @@ body {
 
 .ml-small {
   margin-left: 2rem; }
+  @media screen and (max-width: 31.25em) {
+    .ml-small {
+      margin-left: 0.5rem; } }
 
 .mb-0 {
   margin-bottom: 0 !important; }
@@ -71,6 +77,15 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px; }
+  @media screen and (max-width: 31.25em) {
+    .heading-primary {
+      font-size: 2.2rem; } }
+
+.heading-secondary {
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px; }
 
 .paragraph {
   font-size: 1.6rem; }
@@ -88,15 +103,24 @@ body {
 .search {
   display: flex;
   position: relative; }
+  @media screen and (max-width: 31.25em) {
+    .search {
+      order: 1;
+      flex: 0 0 100%; } }
   .search__input {
     padding: 1rem 2rem;
     border-radius: 100px;
     border: 1px solid var(--color-grey-light-4);
     background-color: var(--color-grey-light-3);
-    width: 40rem;
+    width: 30rem;
     transition: all 0.3s ease-in-out; }
+    @media screen and (max-width: 31.25em) {
+      .search__input {
+        width: 100%; }
+        .search__input:focus {
+          width: 100%; } }
     .search__input:focus {
-      width: 50rem;
+      width: 40rem;
       outline: none; }
   .search__button {
     border: none; }
@@ -163,8 +187,15 @@ body {
 .side-nav {
   margin-top: 3rem;
   list-style: none; }
+  @media screen and (max-width: 55em) {
+    .side-nav {
+      display: flex;
+      margin: 0; } }
   .side-nav__item {
     position: relative; }
+    @media screen and (max-width: 55em) {
+      .side-nav__item {
+        flex: 1; } }
     .side-nav__item:not(:last-child) {
       margin-bottom: 0.5rem; }
   .side-nav__item::before {
@@ -191,6 +222,10 @@ body {
     text-decoration: none;
     position: relative;
     z-index: 1; }
+    @media screen and (max-width: 31.25em) {
+      .side-nav__link:link, .side-nav__link:visited {
+        flex-direction: column;
+        padding: 1rem; } }
   .side-nav__icon {
     fill: currentColor;
     width: 2.25rem;
@@ -206,6 +241,9 @@ body {
   color: var(--color-grey-light-4);
   font-size: 1.6rem;
   padding: 1.5rem; }
+  @media screen and (max-width: 55em) {
+    .copyright {
+      display: none; } }
 
 /**
 *******************************************************
@@ -231,6 +269,9 @@ body {
   gap: 2rem;
   border-bottom: 1px solid var(--color-grey-light-2);
   background-color: #fff; }
+  @media screen and (max-width: 31.25em) {
+    .overview {
+      gap: 0.5rem; } }
 
 .star {
   display: flex;
@@ -260,6 +301,9 @@ body {
   padding: 0.5rem 1rem;
   background: var(--color-primary);
   color: white; }
+  @media screen and (max-width: 31.25em) {
+    .ratings {
+      padding: 0.5rem 0.5rem; } }
   .ratings__text {
     font-size: 2.2rem;
     font-weight: 600; }
@@ -268,9 +312,42 @@ body {
 
 /**
 *******************************************************
-**************************BTN INLINE**********************
+**************************BUTTONS**********************
 *******************************************************
 */
+.btn {
+  padding: 0.8rem 2.5rem;
+  border: none;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  border-radius: 100px;
+  cursor: pointer;
+  line-height: 1; }
+
+.btn-primary {
+  color: white;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark)); }
+  .btn-primary__visible, .btn-primary__invisible {
+    display: block; }
+  .btn-primary__visible {
+    opacity: 1;
+    transform: translateY(-8px);
+    transition: all 0.2s; }
+  .btn-primary__invisible {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 0.2s; }
+  .btn-primary:hover {
+    background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark)); }
+  .btn-primary:hover .btn-primary__visible {
+    opacity: 0;
+    transform: translateY(50px); }
+  .btn-primary:hover .btn-primary__invisible {
+    opacity: 1;
+    transform: translateY(8px); }
+  .btn-primary:focus {
+    animation: pulsate 0.2s infinite; }
+
 .btn-inline {
   border: none;
   background-color: transparent;
@@ -339,8 +416,11 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-top: 2rem; }
+  @media screen and (max-width: 55em) {
+    .recommendation {
+      flex-direction: column; } }
   .recommendation__image {
-    width: 4.5rem;
+    width: 4rem;
     border-radius: 50%;
     border: 2px solid #fff;
     margin-left: -12px; }
@@ -390,12 +470,31 @@ body {
       font-weight: 600;
       color: var(--color-primary); }
 
+/**
+*******************************************************
+**********************CALL TO ACTION*******************
+*******************************************************
+*/
+.cta {
+  text-align: center;
+  margin: 2rem;
+  padding: 2rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15); }
+  @media screen and (max-width: 55em) {
+    .cta {
+      margin: 0; } }
+
 .container {
   max-width: 120rem;
   margin: 8rem auto;
   background-color: var(--color-grey-light-1);
   box-shadow: var(--shadow-dark);
   min-height: 50rem; }
+  @media only screen and (max-width: 75em) {
+    .container {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 100%; } }
 
 .header {
   background-color: #fff;
@@ -405,9 +504,16 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem; }
+  @media screen and (max-width: 31.25em) {
+    .header {
+      flex-wrap: wrap;
+      height: 11rem; } }
 
 .content {
   display: flex; }
+  @media screen and (max-width: 55em) {
+    .content {
+      flex-direction: column; } }
 
 .navigation {
   display: flex;
@@ -415,17 +521,32 @@ body {
   justify-content: space-between;
   flex: 0 0 20rem;
   background-color: var(--color-grey-dark-1); }
+  @media screen and (max-width: 55em) {
+    .navigation {
+      flex: 1; } }
 
 .hotel-view {
-  flex: 1 1 auto;
-  min-height: 50rem; }
+  flex: 1 1 auto; }
 
 .details {
   padding: 2rem;
   display: flex; }
+  @media screen and (max-width: 37.5em) {
+    .details {
+      flex-direction: column;
+      gap: 4rem; } }
+  @media screen and (max-width: 70em) {
+    .details {
+      padding: 1.5rem; } }
 
 .description {
   flex: 0 0 60%;
   margin-right: 2rem;
   padding: 2rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1); }
+  @media screen and (max-width: 31.25em) {
+    .description {
+      margin-right: 0; } }
+  @media screen and (max-width: 70em) {
+    .description {
+      padding: 1.5rem; } }
